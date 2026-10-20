@@ -845,7 +845,7 @@ body.is-locked { overflow: hidden; }
 
 /* News page */
 .news-layout { display: grid; grid-template-columns: 1fr 320px; gap: 36px; align-items: start; }
-.news-layout > *, .shop > *, .pd > *, .cart > *, .contact-grid > *, .policy > * { min-width: 0; }
+.news-layout > *, .shop > *, .pd > *, .cart > *, .contact-grid > *, .policy > *, .account > * { min-width: 0; }
 .news-layout .news-grid { grid-template-columns: repeat(2, 1fr); }
 .sidebar { position: sticky; top: calc(var(--header-h) + 16px); display: grid; gap: 20px; }
 .side-box { background: #fff; border-radius: var(--radius); border: 1px solid var(--line); padding: 20px; }
@@ -900,6 +900,16 @@ body.is-locked { overflow: hidden; }
 .faq .prose { padding: 0 22px 20px; }
 .faq-group { font-family: var(--script); font-size: 30px; color: var(--green-800); margin: 26px 0 4px; }
 
+
+/* Account */
+.account { display: grid; grid-template-columns: 1fr 1.3fr; gap: 28px; align-items: start; }
+.order-list { display: grid; gap: 14px; }
+.order { border: 1px solid var(--line); border-radius: 14px; padding: 16px 18px; background: #fff; }
+.order__head { display: flex; justify-content: space-between; gap: 10px; flex-wrap: wrap; font-size: 14px; }
+.order__head b { color: var(--green-900); }
+.order__status { padding: 2px 10px; border-radius: 999px; background: #fff4d6; color: #8a5a00; font-size: 12.5px; font-weight: 600; }
+.order ul { margin-top: 10px; display: grid; gap: 4px; font-size: 14px; color: var(--ink-2); }
+.order__total { display: flex; justify-content: space-between; margin-top: 10px; padding-top: 10px; border-top: 1px dashed var(--line); font-weight: 700; }
 
 /* 404 */
 .notfound { text-align: center; padding: 70px 0 40px; }
@@ -964,7 +974,7 @@ body.is-locked { overflow: hidden; }
   .gallery { position: static; }
   .cart { grid-template-columns: 1fr; }
   .summary { position: static; }
-  .about-intro, .mv { grid-template-columns: 1fr; }
+  .about-intro, .mv, .account { grid-template-columns: 1fr; }
   .values { grid-template-columns: 1fr 1fr; }
   .cert { grid-template-columns: 200px 1fr; gap: 24px; }
   .news-layout { grid-template-columns: 1fr; }
