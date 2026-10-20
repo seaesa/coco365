@@ -1,0 +1,46 @@
+---
+title: Bài viết
+description: Tin tức và ưu đãi từ COCO365 – Giọt lành mỗi ngày.
+nav: news
+script: news
+---
+<main id="main">
+  <section class="section" style="padding-top:28px">
+    <div class="container">
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <a href="./">Trang chủ</a><svg class="ic"><use href="#i-chevron-right"/></svg>
+        <a href="tin-tuc/">Tin tức</a><svg class="ic"><use href="#i-chevron-right"/></svg>
+        <span aria-current="page" data-crumb></span>
+      </nav>
+      <div class="news-layout">
+        <article class="article" data-article></article>
+        <aside class="sidebar" aria-label="Thanh bên">
+          <div class="side-box">
+            <h3>Bài viết mới</h3>
+            <div class="side-list" data-news-latest></div>
+          </div>
+          <div class="side-box">
+            <h3>Sản phẩm bán chạy</h3>
+            <div class="side-list" data-side-products></div>
+          </div>
+          <div class="side-box" style="background:var(--green-800);color:#fff;border:0">
+            <h3 style="color:#fff">Đặt hàng nhanh</h3>
+            <p style="font-size:14px;color:#d6e8d3;margin-bottom:14px">Gọi hoặc nhắn Zalo để được tư vấn và giao tận nơi.</p>
+            <a class="btn btn--light btn--block" href="tel:0964148133" style="margin-bottom:10px"><svg class="ic"><use href="#i-phone"/></svg>096 4148 133</a>
+            <a class="btn btn--zalo btn--block" href="https://zalo.me/333715272260688319" target="_blank" rel="noopener"><svg class="ic"><use href="#i-zalo"/></svg>Chat Zalo</a>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" style="padding-top:0">
+    <div class="container">
+      <div class="section-head">
+        <h2 class="section-title">Bài viết liên quan</h2>
+        <a class="link-more" href="tin-tuc/">Xem tất cả <svg class="ic"><use href="#i-arrow-right"/></svg></a>
+      </div>
+      <div class="news-grid" data-related-news></div>
+    </div>
+  </section>
+</main>

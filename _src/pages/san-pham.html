@@ -1,0 +1,80 @@
+---
+title: Thực đơn sản phẩm
+description: Thực đơn COCO365: dừa nướng nguyên quả, nước dừa xiêm, kem dừa, sữa dừa non, coco sen, coco matcha, dừa sọ tươi và thạch dừa. Đặt hàng giao tận nơi tại Vinh.
+nav: products
+script: products
+---
+<main id="main">
+  <section class="page-hero">
+    <div class="container">
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <a href="./">Trang chủ</a><svg class="ic"><use href="#i-chevron-right"/></svg>
+        <span aria-current="page" data-crumb>Sản phẩm</span>
+      </nav>
+      <h1 data-title>Thực đơn COCO365</h1>
+      <p data-desc>Hơn 15 món từ dừa xiêm tươi – làm mới mỗi ngày, 100% nguyên liệu tự nhiên, không chất bảo quản.</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container shop">
+      <aside class="filters" id="filters" aria-label="Bộ lọc">
+        <div class="filters__head" style="display:none;align-items:center;justify-content:space-between">
+          <b>Bộ lọc</b>
+          <button class="icon-btn" type="button" aria-label="Đóng bộ lọc" data-filters-close><svg><use href="#i-close"/></svg></button>
+        </div>
+        <div class="filter-box">
+          <h3>Danh mục</h3>
+          <div class="cat-list" data-cats></div>
+        </div>
+        <div class="filter-box">
+          <h3>Mức giá</h3>
+          <div class="price-list">
+            <label class="check"><input type="radio" name="price" value="all" checked> Tất cả</label>
+            <label class="check"><input type="radio" name="price" value="0-25000"> Dưới 25.000đ</label>
+            <label class="check"><input type="radio" name="price" value="25000-35000"> 25.000đ – 35.000đ</label>
+            <label class="check"><input type="radio" name="price" value="35000-999999999"> Trên 35.000đ</label>
+          </div>
+        </div>
+        <a class="filter-promo" href="tin-tuc-chi-tiet/?id=sieu-hot-dong-gia-25k"><img src="assets/img/news/dong-gia-25k.webp" alt="Khuyến mãi đồng giá 25K" loading="lazy"></a>
+      </aside>
+
+      <div class="shop__main">
+        <div class="shop__bar">
+          <p class="shop__count">Hiển thị <b data-result-count>0</b> sản phẩm</p>
+          <div class="shop__tools">
+            <button class="btn btn--outline btn--sm filter-toggle" type="button" data-filters-open><svg class="ic"><use href="#i-filter"/></svg>Bộ lọc</button>
+            <label class="shop__search"><svg class="ic"><use href="#i-search"/></svg><span class="sr-only">Tìm trong thực đơn</span><input type="search" placeholder="Tìm món…" data-q></label>
+            <label class="sr-only" for="sort">Sắp xếp</label>
+            <select class="select" id="sort" data-sort>
+              <option value="popular">Phổ biến nhất</option>
+              <option value="best">Bán chạy nhất</option>
+              <option value="rating">Đánh giá cao</option>
+              <option value="price-asc">Giá: thấp → cao</option>
+              <option value="price-desc">Giá: cao → thấp</option>
+              <option value="name">Tên A → Z</option>
+            </select>
+          </div>
+        </div>
+        <div class="chips" data-chips></div>
+        <div class="product-grid product-grid--3" data-grid></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--tight">
+    <div class="container">
+      <div class="cta-band">
+        <div>
+          <h2>Đặt nhiều – Gom đơn cho cả nhóm?</h2>
+          <p>Gọi ngay hoặc nhắn Zalo để được tư vấn combo và giao tận nơi nhanh nhất.</p>
+        </div>
+        <div class="cta-band__actions">
+          <a class="btn btn--light btn--lg" href="tel:0964148133"><svg class="ic"><use href="#i-phone"/></svg>096 4148 133</a>
+          <a class="btn btn--zalo btn--lg" href="https://zalo.me/333715272260688319" target="_blank" rel="noopener"><svg class="ic"><use href="#i-zalo"/></svg>Chat Zalo</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+<div class="drawer__backdrop filters-backdrop" data-filters-close hidden></div>

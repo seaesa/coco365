@@ -1,0 +1,101 @@
+---
+title: Chi tiết sản phẩm
+description: Thông tin chi tiết, giá bán, kích thước và cách bảo quản sản phẩm COCO365.
+nav: products
+script: product
+---
+<main id="main">
+  <section class="section" style="padding-top:28px">
+    <div class="container">
+      <nav class="breadcrumb" aria-label="Breadcrumb" data-crumbs>
+        <a href="./">Trang chủ</a><svg class="ic"><use href="#i-chevron-right"/></svg>
+        <a href="san-pham/">Sản phẩm</a>
+      </nav>
+
+      <div class="pd" data-pd>
+        <div class="gallery">
+          <div class="gallery__main"><img data-main src="" alt=""></div>
+          <div class="gallery__thumbs" data-thumbs role="list"></div>
+        </div>
+
+        <div class="pd__info">
+          <a class="pd__cat" data-cat href="san-pham/"></a>
+          <h1 class="pd__title" data-name></h1>
+          <div class="pd__rating" data-rating></div>
+          <div class="pd__price"><span data-price></span><small data-unit></small></div>
+          <p class="pd__short" data-short></p>
+          <p class="pd__intro" data-intro></p>
+
+          <div class="pd__block" data-sizes-wrap hidden>
+            <p class="pd__label">Kích thước: <span data-size-label></span></p>
+            <div class="sizes" role="radiogroup" aria-label="Chọn kích thước" data-sizes></div>
+          </div>
+
+          <div class="pd__block">
+            <p class="pd__label">Số lượng</p>
+            <div class="qty">
+              <button type="button" aria-label="Giảm" data-qty="-1"><svg><use href="#i-minus"/></svg></button>
+              <input type="number" min="1" max="99" value="1" aria-label="Số lượng" data-qty-input>
+              <button type="button" aria-label="Tăng" data-qty="1"><svg><use href="#i-plus"/></svg></button>
+            </div>
+          </div>
+
+          <div class="pd__actions">
+            <button class="btn btn--outline btn--lg" type="button" data-add-detail><svg class="ic"><use href="#i-cart"/></svg>Thêm vào giỏ</button>
+            <button class="btn btn--red btn--lg" type="button" data-buy-now>Mua ngay<svg class="ic"><use href="#i-arrow-right"/></svg></button>
+          </div>
+          <p class="pd__contact"><svg class="ic"><use href="#i-phone"/></svg>Đặt nhanh: <a href="tel:0964148133">096 4148 133</a> · <a href="https://zalo.me/333715272260688319" target="_blank" rel="noopener">Chat Zalo</a></p>
+
+          <ul class="pd__perks">
+            <li><svg class="ic"><use href="#i-leaves"/></svg>100% nguyên liệu tự nhiên, không chất bảo quản</li>
+            <li><svg class="ic"><use href="#i-truck"/></svg>Freeship nội thành Vinh cho đơn từ 100.000đ</li>
+            <li><svg class="ic"><use href="#i-snow"/></svg>Giữ lạnh 2–5°C trong suốt quá trình giao</li>
+            <li><svg class="ic"><use href="#i-refresh"/></svg>Đổi mới miễn phí nếu sản phẩm lỗi</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="ptabs">
+        <div class="ptabs__nav" role="tablist" aria-label="Thông tin sản phẩm">
+          <button type="button" role="tab" id="tab-desc" aria-controls="panel-desc" aria-selected="true">Mô tả sản phẩm</button>
+          <button type="button" role="tab" id="tab-store" aria-controls="panel-store" aria-selected="false">Bảo quản &amp; sử dụng</button>
+          <button type="button" role="tab" id="tab-review" aria-controls="panel-review" aria-selected="false">Đánh giá <span data-review-count></span></button>
+        </div>
+        <div class="ptabs__panel prose" role="tabpanel" id="panel-desc" aria-labelledby="tab-desc" data-desc></div>
+        <div class="ptabs__panel prose" role="tabpanel" id="panel-store" aria-labelledby="tab-store" hidden data-store></div>
+        <div class="ptabs__panel" role="tabpanel" id="panel-review" aria-labelledby="tab-review" hidden>
+          <div class="reviews">
+            <div class="review-summary" data-review-summary></div>
+            <div data-review-list></div>
+            <form class="review-form" data-review-form novalidate>
+              <h3 style="font-size:17px">Viết đánh giá của bạn</h3>
+              <div class="rate-input" role="radiogroup" aria-label="Số sao">
+                <input type="radio" name="rate" id="r5" value="5" checked><label for="r5" title="5 sao"><svg><use href="#i-star"/></svg></label>
+                <input type="radio" name="rate" id="r4" value="4"><label for="r4" title="4 sao"><svg><use href="#i-star"/></svg></label>
+                <input type="radio" name="rate" id="r3" value="3"><label for="r3" title="3 sao"><svg><use href="#i-star"/></svg></label>
+                <input type="radio" name="rate" id="r2" value="2"><label for="r2" title="2 sao"><svg><use href="#i-star"/></svg></label>
+                <input type="radio" name="rate" id="r1" value="1"><label for="r1" title="1 sao"><svg><use href="#i-star"/></svg></label>
+              </div>
+              <div class="form-grid">
+                <div class="field"><label for="rv-name">Họ tên <span>*</span></label><input class="input" id="rv-name" name="name" required><span class="field__err">Vui lòng nhập họ tên</span></div>
+                <div class="field"><label for="rv-phone">Số điện thoại</label><input class="input" id="rv-phone" name="phone" type="tel" inputmode="tel"></div>
+                <div class="field field--full"><label for="rv-text">Nhận xét <span>*</span></label><textarea id="rv-text" name="text" required placeholder="Chia sẻ cảm nhận của bạn về món này…"></textarea><span class="field__err">Vui lòng nhập nhận xét</span></div>
+              </div>
+              <div><button class="btn btn--primary" type="submit">Gửi đánh giá<svg class="ic"><use href="#i-send"/></svg></button></div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" style="padding-top:0">
+    <div class="container">
+      <div class="section-head">
+        <h2 class="section-title">Sản phẩm liên quan</h2>
+        <a class="link-more" href="san-pham/">Xem tất cả <svg class="ic"><use href="#i-arrow-right"/></svg></a>
+      </div>
+      <div class="product-grid" data-related></div>
+    </div>
+  </section>
+</main>

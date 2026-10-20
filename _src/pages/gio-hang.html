@@ -1,0 +1,110 @@
+---
+title: Giỏ hàng & Thanh toán
+description: Kiểm tra giỏ hàng và đặt hàng COCO365 – giao tận nơi tại Vinh, Nghệ An.
+script: cart
+---
+<main id="main">
+  <section class="page-hero">
+    <div class="container">
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <a href="./">Trang chủ</a><svg class="ic"><use href="#i-chevron-right"/></svg>
+        <span aria-current="page">Giỏ hàng</span>
+      </nav>
+      <h1>Giỏ hàng của bạn</h1>
+      <p>Kiểm tra lại món đã chọn, điền thông tin nhận hàng và COCO365 sẽ gọi xác nhận trong ít phút.</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div data-cart-empty hidden>
+        <div class="success">
+          <div class="success__ic"><svg><use href="#i-cart"/></svg></div>
+          <h2>Giỏ hàng đang trống</h2>
+          <p>Chọn vài món dừa tươi mát để bắt đầu nhé!</p>
+          <a class="btn btn--primary" href="san-pham/">Xem thực đơn <svg class="ic"><use href="#i-arrow-right"/></svg></a>
+        </div>
+      </div>
+
+      <div data-cart-done hidden>
+        <div class="success">
+          <div class="success__ic"><svg><use href="#i-check"/></svg></div>
+          <h2>Đơn hàng đã được tạo!</h2>
+          <p>Cảm ơn <b data-done-name></b>. Bước cuối: gửi đơn cho COCO365 qua Zalo (nội dung đơn đã được sao chép sẵn, bạn chỉ cần dán và gửi) hoặc gọi hotline để xác nhận.</p>
+          <span class="order-code" data-done-code></span>
+          <div style="display:flex;gap:10px;justify-content:center;flex-wrap:wrap">
+            <button class="btn btn--zalo" type="button" data-send-zalo><svg class="ic"><use href="#i-zalo"/></svg>Gửi đơn qua Zalo</button>
+            <a class="btn btn--red" href="tel:0964148133"><svg class="ic"><use href="#i-phone"/></svg>Gọi 096 4148 133</a>
+          </div>
+          <div style="display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-top:4px">
+            <a class="btn btn--outline btn--sm" href="tai-khoan/">Tra cứu đơn hàng</a>
+            <a class="btn btn--outline btn--sm" href="san-pham/">Tiếp tục mua sắm</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="cart" data-cart-wrap hidden>
+        <div>
+          <div class="card-box" style="padding-block:10px">
+            <div style="display:flex;justify-content:space-between;align-items:center;gap:10px;padding:8px 0 4px">
+              <h2 class="card-box__title" style="margin:0"><span>1</span>Món đã chọn</h2>
+              <button class="link-btn" type="button" data-cart-clear><svg><use href="#i-trash"/></svg>Xóa tất cả</button>
+            </div>
+            <div data-cart-list></div>
+          </div>
+
+          <form class="card-box" id="thanh-toan" data-checkout novalidate>
+            <h2 class="card-box__title"><span>2</span>Thông tin nhận hàng</h2>
+            <div class="form-grid">
+              <div class="field"><label for="co-name">Họ và tên <span>*</span></label><input class="input" id="co-name" name="name" autocomplete="name" required><span class="field__err">Vui lòng nhập họ tên</span></div>
+              <div class="field"><label for="co-phone">Số điện thoại <span>*</span></label><input class="input" id="co-phone" name="phone" type="tel" inputmode="tel" autocomplete="tel" required placeholder="VD: 0912 345 678"><span class="field__err">Số điện thoại chưa hợp lệ</span></div>
+              <div class="field field--full"><label for="co-address">Địa chỉ nhận hàng <span>*</span></label><input class="input" id="co-address" name="address" autocomplete="street-address" required placeholder="Số nhà, đường, phường/xã"><span class="field__err">Vui lòng nhập địa chỉ</span></div>
+              <div class="field"><label for="co-time">Thời gian nhận</label>
+                <select class="select" id="co-time" name="time">
+                  <option>Giao ngay (30–60 phút)</option>
+                  <option>Buổi sáng (8:00 – 11:00)</option>
+                  <option>Buổi chiều (14:00 – 17:00)</option>
+                  <option>Buổi tối (18:00 – 21:00)</option>
+                </select>
+              </div>
+              <div class="field"><label for="co-email">Email (không bắt buộc)</label><input class="input" id="co-email" name="email" type="email" autocomplete="email"></div>
+              <div class="field field--full"><label for="co-note">Ghi chú</label><textarea id="co-note" name="note" placeholder="VD: ít đá, giao giờ hành chính, gọi trước khi giao…"></textarea></div>
+            </div>
+
+            <h2 class="card-box__title" style="margin-top:24px"><span>3</span>Phương thức thanh toán</h2>
+            <div class="pay-opts">
+              <label class="pay-opt"><input type="radio" name="pay" value="cod" checked><svg class="ic"><use href="#i-wallet"/></svg><span><b>Thanh toán khi nhận hàng (COD)</b><small>Trả tiền mặt cho nhân viên giao hàng</small></span></label>
+              <label class="pay-opt"><input type="radio" name="pay" value="bank"><svg class="ic"><use href="#i-shield"/></svg><span><b>Chuyển khoản ngân hàng</b><small>COCO365 gửi thông tin tài khoản khi gọi xác nhận đơn</small></span></label>
+            </div>
+          </form>
+        </div>
+
+        <aside class="summary" aria-label="Tóm tắt đơn hàng">
+          <h2>Tóm tắt đơn hàng</h2>
+          <div class="ship-progress" data-ship></div>
+          <div class="summary__row"><span>Tạm tính (<span data-sum-count>0</span> món)</span><b data-sum-sub>0đ</b></div>
+          <div class="summary__row"><span>Phí giao hàng</span><b data-sum-ship>0đ</b></div>
+          <div class="summary__row" data-sum-discount-row hidden><span>Giảm giá</span><b data-sum-discount style="color:var(--green-700)"></b></div>
+          <div class="coupon">
+            <label class="sr-only" for="coupon">Mã giảm giá</label>
+            <input class="input" id="coupon" placeholder="Mã giảm giá" data-coupon>
+            <button class="btn btn--outline btn--sm" type="button" data-coupon-apply style="min-height:44px">Áp dụng</button>
+          </div>
+          <div class="summary__row summary__row--total"><span>Tổng cộng</span><b data-sum-total>0đ</b></div>
+          <button class="btn btn--red btn--lg btn--block" type="submit" form="thanh-toan" style="margin-top:14px">Đặt hàng<svg class="ic"><use href="#i-arrow-right"/></svg></button>
+          <p style="font-size:12.5px;color:var(--muted);margin-top:12px;text-align:center">Bằng việc đặt hàng, bạn đồng ý với <a href="chinh-sach/" style="color:var(--green-800)">chính sách mua hàng</a> của COCO365.</p>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" style="padding-top:0" data-suggest-wrap>
+    <div class="container">
+      <div class="section-head">
+        <h2 class="section-title">Có thể bạn sẽ thích</h2>
+        <a class="link-more" href="san-pham/">Xem tất cả <svg class="ic"><use href="#i-arrow-right"/></svg></a>
+      </div>
+      <div class="product-grid" data-suggest></div>
+    </div>
+  </section>
+</main>
