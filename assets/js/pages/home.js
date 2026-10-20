@@ -20,9 +20,24 @@ document.addEventListener('DOMContentLoaded', () => {
   };
   if (cups.length && dots) {
     dots.innerHTML = cups.map((c, i) => `<button type="button" role="tab" aria-label="${esc(c.dataset.name)}" aria-selected="${i === 0}"></button>`).join('');
+    const auto = !matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const restart = () => { clearInterval(timer); if (auto) timer = setInterval(() => show(cur + 1), 4200); };
     $$('button', dots).forEach((b, i) => b.addEventListener('click', () => { show(i); restart(); }));
-    const restart = () => { clearInterval(timer); timer = setInterval(() => show(cur + 1), 4200); };
-    if (!matchMedia('(prefers-reduced-motion: reduce)').matches) restart();
+    $('[data-hero-prev]').addEventListener('click', () => { show(cur - 1); restart(); });
+    $('[data-hero-next]').addEventListener('click', () => { show(cur + 1); restart(); });
+    // Tạm dừng khi rê chuột vào banner
+    const hero = $('.hero');
+    hero.addEventListener('mouseenter', () => clearInterval(timer));
+    hero.addEventListener('mouseleave', restart);
+    // Vuốt trái/phải trên điện thoại
+    let x0 = null;
+    hero.addEventListener('touchstart', (e) => { x0 = e.touches[0].clientX; }, { passive: true });
+    hero.addEventListener('touchend', (e) => {
+      if (x0 === null) return;
+      const dx = e.changedTouches[0].clientX - x0; x0 = null;
+      if (Math.abs(dx) > 50) { show(cur + (dx < 0 ? 1 : -1)); restart(); }
+    });
+    restart();
   }
 
   /* Sản phẩm bán chạy */

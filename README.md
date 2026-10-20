@@ -25,7 +25,6 @@ URL không có đuôi `.html` mà không cần cấu hình server: mỗi trang l
 /lien-he/                  Liên hệ + bản đồ
 /chinh-sach/               Hướng dẫn mua hàng, vận chuyển, đổi trả, thanh toán, bảo mật
 /faq/                      Câu hỏi thường gặp
-/tai-khoan/                Tra cứu đơn hàng
 404.html                   Trang lỗi (dùng đường dẫn tuyệt đối "/", cần đặt site ở gốc tên miền)
 assets/css/style.css       Toàn bộ giao diện
 assets/js/data.js          DỮ LIỆU: thông tin cửa hàng, danh mục, sản phẩm, giá, tin tức

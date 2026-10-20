@@ -18,16 +18,7 @@ document.addEventListener('DOMContentLoaded', () => {
     tabs.innerHTML = cats.map((c, i) => `<button class="tab" type="button" role="tab" aria-selected="${i === 0}" data-c="${esc(c)}">${esc(c)}</button>`).join('');
     const render = () => {
       const list = cur === 'Tất cả' ? sorted : sorted.filter((n) => n.cat === cur);
-      const [first, ...rest] = list;
-      $('[data-news-feature]').innerHTML = first ? `<article class="news-feature reveal">
-        <div class="news-feature__img"><img src="${first.img}" alt="${esc(first.title)}"></div>
-        <div class="news-feature__body">
-          <div class="n-card__meta"><span class="tag">${esc(first.cat)}</span><span>${icon('calendar')} ${C.fmtDate(first.date)}</span></div>
-          <h2><a href="${COCO.root}tin-tuc-chi-tiet/?id=${first.id}">${esc(first.title)}</a></h2>
-          <p>${esc(first.excerpt)}</p>
-          <span class="n-card__more">Đọc tiếp ${icon('arrow-right')}</span>
-        </div></article>` : '';
-      listEl.innerHTML = rest.map(newsCard).join('');
+      listEl.innerHTML = list.map(newsCard).join('');
       reveal();
     };
     tabs.addEventListener('click', (e) => {

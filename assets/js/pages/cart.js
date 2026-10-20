@@ -1,6 +1,6 @@
 /* Trang giỏ hàng & thanh toán */
 document.addEventListener('DOMContentLoaded', () => {
-  const { $, $$, esc, icon, productCard, reveal, cart, store, toast } = window.App;
+  const { $, $$, esc, icon, productCard, reveal, cart, toast } = window.App;
   const C = window.COCO;
   const S = C.store;
   let coupon = null;
@@ -102,8 +102,6 @@ document.addEventListener('DOMContentLoaded', () => {
     const items = cart.items().map((it) => ({ ...it, name: C.byId(it.id).name, price: cart.priceOf(it) }));
     const code = 'CC' + Date.now().toString().slice(-7);
     const fd = Object.fromEntries(new FormData(form).entries());
-    const order = { code, at: Date.now(), items, ...t, customer: fd, status: 'Chờ xác nhận' };
-    const orders = store.get('coco365_orders', []); orders.unshift(order); store.set('coco365_orders', orders);
 
     const text = [
       `ĐƠN HÀNG ${code} – COCO365`,
